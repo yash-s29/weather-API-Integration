@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather App | OpenWeatherMap API</title>
+
+  <link rel="icon" type="image/x-icon" href="icons/favicon.ico" />
+  <link rel="stylesheet" href="styles/style.css" />
+
+  <!-- Prefetch images -->
+  <link rel="prefetch" href="media/day1.jpg" />
+  <link rel="prefetch" href="media/night1.jpg" />
+  <link rel="prefetch" href="media/rainy1.jpg" />
+  <link rel="prefetch" href="media/cloudy1.jpg" />
+  <link rel="prefetch" href="icons/loader.gif" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      background-repeat: no-repeat !important;
+      background-size: cover !important;
+      background-attachment: fixed;
+      height: 100vh;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        height: 100%;
+      }
+    }
+
+    .dark-theme {
+      filter: brightness(0.85);
+      transition: 0.4s;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <ul class="navbar">
+    <li style="float: left;" class="forecast">
+      <a class="repo-link" href="#" style="font-size: 2rem; font-weight: bold;">⛅ Weather Forecast</a>
+    </li>
+    <li><a href="#" id="refreshBtn">⟳</a></li>
+    <li><a href="#" id="themeToggle">🌓</a></li>
+    <li><a href="#">☰</a></li>
+    <li>
+      <input spellcheck="false" class="search-city" id="searchCity" type="text" autocomplete="off"
+        placeholder="🔍︎ Search City" />
+    </li>
+  </ul>
+
+  <!-- Mobile Navbar -->
+  <ul class="mobile-navbar">
+    <li>
+      <input spellcheck="false" class="mobile-search-city" id="mobileSearchCity" type="text" autocomplete="off"
+        placeholder="Search City..." />
+    </li>
+  </ul>
+
+  <!-- Weather Info -->
+  <h1 class="location-name" id="locationName" style="text-align:center; font-size: 2.5rem; margin-top: 2rem;">Search City...</h1>
+
+  <div class="temperature-container" style="display: flex; justify-content: center; align-items: center; gap: 1rem;">
+    <div class="temperature-icon">
+      <img class="imgs-as-icons animated-weather-icon" src="icons/sunny.png" alt="weather-icon" style="width: 80px;" />
+    </div>
+    <div class="temperature-value" id="temperatureValue" style="font-size: 3rem;">--°C</div>
+  </div>
+
+  <h2 class="weather-type" id="weatherType" style="text-align: center; font-weight: normal; font-size: 1.8rem;">--</h2>
+
+  <!-- Additional Info Row 1 -->
+  <div class="additionals-first-row">
+    <span>Air Quality: <span class="air-quality-index-additional-value">-</span></span>
+    <span>Real Feel: <span id="realFeelAdditionalValue">-</span></span>
+    <span>Humidity: <span id="humidityAdditionalValue">-</span></span>
+    <span>High Temp: <span id="maxTemperatureAdditionalValue">-</span></span>
+    <span>Low Temp: <span id="minTemperatureAdditionalValue">-</span></span>
+  </div>
+
+  <!-- Additional Info Row 2 -->
+  <div class="additionals-second-row">
+    <span>Wind Speed: <span id="windSpeedAdditionalValue">-</span></span>
+    <span>Wind Direction: <span id="windDirectionAdditionalValue">-</span></span>
+    <span>Visibility: <span id="visibilityAdditionalValue">-</span></span>
+    <span>Pressure: <span id="pressureAdditionalValue">-</span></span>
+    <span>Sunrise: <span id="sunriseAdditionalValue">-</span></span>
+    <span>Sunset: <span id="sunsetAdditionalValue">-</span></span>
+  </div>
+
+  <!-- Forecast Section -->
+  <div class="daily-forecast">
+    <h2 class="daily-forecast-label" style="font-size: 2.5rem; font-weight: 700; margin: 3rem 0 1rem; text-align: center; color: #fff;">
+      🌤️ 7-Day Weather Forecast
+    </h2>
+    <div id="forecast-container" class="forecast-container" style="
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1.5rem;
+        padding: 1rem 2rem;
+      ">
+      <!-- JS will add forecast cards here -->
+    </div>
+  </div>
+
+  <!-- Footer Space -->
+  <div style="height: 50px;"></div>
+
+  <!-- Scripts -->
+  <script src="scripts/script.js"></script>
+  <script src="scripts/mobile.js"></script>
+  <script>
+    // Dark Mode Toggle
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark-theme");
+    });
+  </script>
+</body>
+</html>

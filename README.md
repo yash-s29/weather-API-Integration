@@ -14,13 +14,13 @@
 
 ##DESCRIPTION##
 
-📌 Overview :
+# 📌 Overview #
 
 The Weather API Integration project is a web-based application built using HTML, CSS, and JavaScript that fetches and displays real-time weather data using the OpenWeatherMap API. It allows users to search for the current weather in any city or country around the world, offering a user-friendly interface with live updates on temperature, weather conditions, humidity, and more.
 
 This project not only demonstrates the fundamentals of API integration but also showcases clean UI/UX design, asynchronous JavaScript (AJAX), and JSON data handling in a frontend environment. It is perfect for beginner-to-intermediate developers looking to understand how to consume public APIs in real-world applications.
 
-🎯 Objectives
+# 🎯 Objectives #
 
 -- Integrate a third-party weather API (OpenWeatherMap).
 
@@ -40,7 +40,7 @@ This project not only demonstrates the fundamentals of API integration but also 
 
 -- Learn and apply key web development concepts: API calls, promises, async/await, DOM manipulation, and error handling.
 
-🔧 Tech Stack Used :
+# 🔧 Tech Stack Used:
 
 -- HTML5	Structure of the web application
 
@@ -50,7 +50,7 @@ This project not only demonstrates the fundamentals of API integration but also 
 
 -- OpenWeatherMap API	Provides live weather data in JSON format
 
-🔍 How It Works
+# 🔍 How It Works
 
 //The user enters the name of a city in the input field.
 
@@ -72,7 +72,7 @@ This project not only demonstrates the fundamentals of API integration but also 
 
 - Icon representing weather condition
 
-  #OUTPUT#
+  # OUTPUT #
 
   <img width="2829" height="1362" alt="Image" src="https://github.com/user-attachments/assets/c2ad10cd-3966-48f7-a1f2-b0da1aedc206" />
   

@@ -40,7 +40,6 @@ body.rainy {
   background-size: cover;
 }
 
-/* NAVBAR */
 .navbar,
 .mobile-navbar {
   background: rgba(0, 0, 0, 0.375);
@@ -78,7 +77,6 @@ body.rainy {
   transition: 0.3s;
 }
 
-/* SEARCH BAR */
 .search-city,
 .mobile-search-city {
   width: 90%;
@@ -96,7 +94,6 @@ body.rainy {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
-/* WEATHER DISPLAY */
 .location-name {
   text-align: center;
   font-weight: 700;
@@ -129,7 +126,6 @@ body.rainy {
   height: 60px;
 }
 
-/* ADDITIONAL INFO */
 .additionals-first-row,
 .additionals-second-row {
   font-size: 14px;
@@ -151,7 +147,6 @@ body.rainy {
   transition: all 0.3s;
 }
 
-/* FORECAST SECTION */
 .daily-forecast {
   padding: 40px 20px 60px;
   text-align: center;
@@ -222,7 +217,6 @@ body.rainy {
   opacity: 0.8;
 }
 
-/* RESPONSIVE */
 @media (max-width: 768px) {
   .navbar {
     display: none;
@@ -252,7 +246,6 @@ body.rainy {
   }
 }
 
-/* TOGGLE BUTTON */
 .toggle-theme-btn {
   position: fixed;
   top: 15px;
@@ -271,7 +264,6 @@ body.rainy {
   background: rgba(255, 255, 255, 0.3);
 }
 
-/* LOADER */
 #loader1,
 #loader2,
 #loader3 {

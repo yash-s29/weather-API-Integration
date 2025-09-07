@@ -1,6 +1,4 @@
 const cityInput = document.getElementById("searchCity");
-
-// DARK MODE TOGGLE
 const themeToggleBtn = document.getElementById("toggleThemeBtn");
 if (themeToggleBtn) {
   themeToggleBtn.addEventListener("click", () => {
@@ -8,7 +6,6 @@ if (themeToggleBtn) {
   });
 }
 
-// INITIAL RANDOM BACKGROUND (Fallback)
 const backgroundsList = [
   "day1.jpg", "day2.jpg", "day3.jpg",
   "cloudy1.jpg", "cloudy2.jpg"
@@ -20,7 +17,6 @@ function setRandomBackground() {
 }
 setRandomBackground();
 
-// SEARCH HANDLER
 cityInput.addEventListener("keyup", async (event) => {
   if (event.key !== "Enter") return;
   const city = cityInput.value.trim();
@@ -55,7 +51,6 @@ cityInput.addEventListener("keyup", async (event) => {
   }
 });
 
-// 🔄 BACKGROUND BASED ON WEATHER & TIME
 function updateBackgroundByWeather(weatherType, sunrise, sunset) {
   const now = Math.floor(Date.now() / 1000);
   const isDay = now >= sunrise && now <= sunset;
@@ -73,7 +68,6 @@ function updateBackgroundByWeather(weatherType, sunrise, sunset) {
   fadeInBackground(`media/${imageName}`);
 }
 
-// 🔄 FADE-IN BACKGROUND TRANSITION
 function fadeInBackground(imageUrl) {
   const overlay = document.createElement("div");
   overlay.classList.add("bg-overlay");
@@ -93,7 +87,6 @@ function fadeInBackground(imageUrl) {
   }
 }
 
-// LOADER DISPLAY
 function showLoader() {
   ["locationName", "temperatureValue", "weatherType"].forEach(id => {
     const el = document.getElementById(id);
@@ -101,14 +94,12 @@ function showLoader() {
   });
 }
 
-// ERROR DISPLAY
 function showError(msg) {
   document.getElementById("locationName").textContent = msg;
   document.getElementById("temperatureValue").textContent = "";
   document.getElementById("weatherType").textContent = "";
 }
 
-// CURRENT WEATHER UI
 function updateWeatherUI(data) {
   const { name, main, weather, wind, visibility, sys } = data;
 
@@ -128,7 +119,6 @@ function updateWeatherUI(data) {
   document.getElementById("sunsetAdditionalValue").textContent = formatTime(sys.sunset);
 }
 
-// FORECAST DISPLAY
 function updateForecastUI(data) {
   const forecastContainer = document.getElementById("forecast-container");
   forecastContainer.innerHTML = "";
@@ -180,7 +170,6 @@ function updateForecastUI(data) {
   }
 }
 
-// FORMAT UNIX TIME
 function formatTime(unixTimestamp) {
   const date = new Date(unixTimestamp * 1000);
   return date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
